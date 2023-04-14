@@ -1,0 +1,25 @@
+.dataContainer {
+    /* background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: blueviolet;
+    height: 50vh;
+    width: 100vh;
+    min-width: 100%; */
+    position: absolute;
+    top: 400px;
+    left: 30%;
+    height: 300px;
+    width: fit-content;
+    align-items: center;
+    
+}
+.dataContainerBacground{
+    position: absolute;
+    background-color: white;
+    opacity: 5%;
+    top: 0;
+    height: 100%;
+    width:100%;
+}
