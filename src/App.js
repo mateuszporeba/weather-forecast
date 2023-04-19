@@ -31,9 +31,8 @@ function App() {
       </div>
 
       <BrowseForecast forecastData={onForecastData} />
+
       {showForecast && <WeatherData data={data} />}
-
-
 
     </div>
   );

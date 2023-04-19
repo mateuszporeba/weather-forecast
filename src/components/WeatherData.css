@@ -9,17 +9,15 @@
     min-width: 100%; */
     position: absolute;
     top: 400px;
-    left: 30%;
     height: 300px;
     width: fit-content;
     align-items: center;
-    
+    left:0;
+    right:0;
+  
+    margin-left: auto;
+    margin-right: auto;
 }
-.dataContainerBacground{
-    position: absolute;
-    background-color: white;
-    opacity: 5%;
-    top: 0;
-    height: 100%;
-    width:100%;
+.weatherDataContainer{
+    background-color: azure;
 }

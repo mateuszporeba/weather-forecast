@@ -24,6 +24,7 @@ export default function InputField(props) {
   const onClickDropDownHandler = (cityName) => {
     setInputValue(cityName);
     props.forecastInputValue(cityName);
+    props.recommendedCityClick();
     setRecommendedCities(false);
   }
 

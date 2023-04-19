@@ -12,24 +12,29 @@ export default function BrowseForecast(props) {
   const OnInputData = (inputCity) => {
     setInputValue(inputCity);
   }
-
-  const checkForecast = () => {
-
+  useEffect(() => {
     fetch('https://api.openweathermap.org/data/2.5/weather?&units=metric&q=' + inputValue + '&appid=' + process.env.REACT_APP_API_KEY)
       .then(res => res.json())
-      .then(data => {
-        props.forecastData(data);
-      })
+      .then(data => props.forecastData(data))
       .catch(error => console.log("ERROR"));
+  }, [inputValue]);
+
+  const checkForecast = () => {
+      fetch('https://api.openweathermap.org/data/2.5/weather?&units=metric&q=' + inputValue + '&appid=' + process.env.REACT_APP_API_KEY)
+        .then(res => res.json())
+        .then(data => props.forecastData(data))
+        .catch(error => console.log("ERROR"));
   }
+
 
   const clickHandler = () => {
     checkForecast(inputValue);
   }
+
   return (
     <div className='browseForecastContainer'>
 
-      <InputField forecastInputValue={OnInputData} />
+      <InputField forecastInputValue={OnInputData} recommendedCityClick={clickHandler} />
 
       <div className='buttonPadding'   >
         <button className='' onClick={clickHandler}>
