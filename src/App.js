@@ -13,6 +13,8 @@ function App() {
   const onForecastData = (forecastObj) => {
     setData(forecastObj)
     setShowForecast(true);
+    console.log('jestem w OnForecastData');
+    console.log('showForecast: ' + showForecast);
   }
   
   let dataContent = '';
