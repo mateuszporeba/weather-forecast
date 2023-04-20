@@ -15,7 +15,9 @@ export default function InputField(props) {
     if (citiesData.filter(city => city.name.toLowerCase().startsWith(event.target.value.toLowerCase())).length > 0) {
       setInputValue(event.target.value);
       props.forecastInputValue(event.target.value);
-
+      setRecommendedCities(true);
+    }
+    if(event.target.value.length < inputValue.length){
       setRecommendedCities(true);
     }
     //console.log(citiesData.filter(city => city.name.startsWith('Wa' || 'wa')));

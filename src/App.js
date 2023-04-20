@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./App.css";
 
 import WeatherData from "./components/WeatherData.js";
@@ -11,14 +11,17 @@ function App() {
   const [showForecast, setShowForecast] = useState(false);
 
   const onForecastData = (forecastObj) => {
-    console.log(forecastObj);
     setData(forecastObj)
     setShowForecast(true);
   }
-  let weatherforecast = '';
+  
+  let dataContent = '';
   if (data != null) {
-
+    dataContent = <WeatherData data={data} />
   }
+
+// /{showForecast &&  <WeatherData data={data} />}
+
 
   return (
     <div>
@@ -32,7 +35,7 @@ function App() {
 
       <BrowseForecast forecastData={onForecastData} />
 
-      {showForecast && <WeatherData data={data} />}
+      {showForecast &&  dataContent}
 
     </div>
   );

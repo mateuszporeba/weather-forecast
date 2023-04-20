@@ -10,16 +10,16 @@ export default function WeatherData(props) {
     //colSpan={2}
 
     const formattedTime = (unix_timestamp) => {
-    // Create a new JavaScript Date object based on the timestamp
-    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-    var date = new Date(unix_timestamp * 1000);
-    // Hours part from the timestamp
-    var hours = date.getHours();
-    // Minutes part from the timestamp
-    var minutes = "0" + date.getMinutes();
-    // Seconds part from the timestamp
-    var seconds = "0" + date.getSeconds();
-    return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        // Create a new JavaScript Date object based on the timestamp
+        // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+        var date = new Date(unix_timestamp * 1000);
+        // Hours part from the timestamp
+        var hours = date.getHours();
+        // Minutes part from the timestamp
+        var minutes = "0" + date.getMinutes();
+        // Seconds part from the timestamp
+        var seconds = "0" + date.getSeconds();
+        return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     }
 
     return (
@@ -28,7 +28,12 @@ export default function WeatherData(props) {
 
                 <Table striped bordered hover>
 
+
                     <thead>
+                        <tr>
+                            <th colSpan={4} style={{textAlign: "center"}}>{data.name}</th>
+                        </tr>
+
                         <tr>
                             <th>Temperature</th>
                             <th>Wind</th>
